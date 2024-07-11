@@ -25,3 +25,16 @@ window.addEventListener('scroll',()=>{
         topheadbar.classList.add('hide');
       }
 })
+function updateTextBasedOnMediaQuery(){
+  const loginButtonText = document.getElementById('login-button-1-p');
+    const openAppButtonText = document.getElementById('open-app-button-p');
+    if(window.matchMedia('(max-width:767px)').matches){
+      loginButtonText.textContent = 'Login';
+      openAppButtonText.textContent = 'Open App';
+    }else{
+      loginButtonText.textContent = 'Sign In';
+        openAppButtonText.textContent = 'Sign Up';
+    }
+}
+updateTextBasedOnMediaQuery();
+window.addEventListener('resize', updateTextBasedOnMediaQuery);
